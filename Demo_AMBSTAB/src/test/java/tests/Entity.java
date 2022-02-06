@@ -10,7 +10,8 @@ public class Entity {
 		Login_Module login_Module = new Login_Module();
 		login_Module.Login();
 		
-
+		OtherTransaction_Module otherTransaction_Module = new OtherTransaction_Module();
+		otherTransaction_Module.OtherTransaction();
 	}
 
 }
