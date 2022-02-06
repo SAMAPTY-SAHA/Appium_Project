@@ -7,17 +7,13 @@ import org.openqa.selenium.By;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
-public class MM_Entity extends Base{
+public class Login_Module {
 	
-	
-	public static void main(String[] args) throws MalformedURLException, InterruptedException {
-		// TODO Auto-generated method stub
+	public void Login() throws MalformedURLException, InterruptedException {
 		
-        AndroidDriver<AndroidElement> driver = Capabilities();
+		AndroidDriver<AndroidElement>  driver = Base.GetInstance();
 		
-		////////////..........Login Online Mode............///////////////////
-			
-        Thread.sleep(2000);
+		Thread.sleep(2000);
 		driver.findElement(By.id("com.ambs.mobile:id/etLogin_MainActivity")).sendKeys("admin"); //amount 
 	    Thread.sleep(2000);
 	    
@@ -32,15 +28,13 @@ public class MM_Entity extends Base{
 	    driver.findElement(By.id("com.ambs.mobile:id/btnLogin_MainActivity")).click(); //amount 
 	    Thread.sleep(2000);
 	    
+	  
+		//driver.navigate().back();
 		
 		
+		//driver.findElement(By.id("android:id/button1")).click();
+		//Thread.sleep(2000);
 		
-		 
-		 
-		
-		
-	
 	}
-
 
 }

@@ -13,8 +13,29 @@ import io.appium.java_client.remote.MobileCapabilityType;
 public class Base {
 	
 	
+	private static Base base ;
+	private static AndroidDriver<AndroidElement>  driver ;
+	
+	private Base() {		
+	}
+	
+	public static AndroidDriver<AndroidElement>  GetInstance() throws MalformedURLException
+	{
+		if (base==null) {
+			
+			//System.out.println("inside if " + base);
+			base= new Base();
+			driver = Capabilities();
+			
+		}
+		//System.out.println("return " + base);
+		return driver;
+	}
+	
+	
+	
 	//public static void main(String[] args) throws MalformedURLException {
-    public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
+    private static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
 	// TODO Auto-generated method stub
 	
 	
@@ -37,9 +58,16 @@ public class Base {
 	
 	cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"ANDROID");
 	cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"11");
-	cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Galaxy Tab A7 Lite");
-	cap.setCapability(MobileCapabilityType.UDID,"R8KR50021HL");
-	cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"1000");
+	//cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Galaxy Tab A7 Lite");
+	//cap.setCapability(MobileCapabilityType.UDID,"R8KR50021HL");
+	//cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"1000");
+	
+	
+	/*cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"ANDROID");
+	cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10 QKQ1.200114.002");
+	cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Redmi Note 8");
+	cap.setCapability(MobileCapabilityType.UDID,"16a38ed0");
+	cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"1000");*/
 	
 	
 	///........................................
@@ -50,7 +78,7 @@ public class Base {
 	cap.setCapability("autoGrantPermissions", "true"); //app permission remover
 	
 	
-    //cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
+    cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 	
 	AndroidDriver<AndroidElement> driver =new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
 	
@@ -58,5 +86,4 @@ public class Base {
 	return driver;
 	
     }
-
 }
