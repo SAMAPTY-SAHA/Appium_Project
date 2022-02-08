@@ -12,6 +12,10 @@ public class Entity {
 		
 		OtherTransaction_Module otherTransaction_Module = new OtherTransaction_Module();
 		otherTransaction_Module.OtherTransaction();
+		
+		SecurityTransaction_Module securityTransaction_Module = new SecurityTransaction_Module();
+		securityTransaction_Module.SecurityTransaction();
+		
 	}
 
 }
