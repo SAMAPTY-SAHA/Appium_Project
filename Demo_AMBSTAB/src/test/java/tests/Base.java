@@ -28,7 +28,7 @@ public class Base {
 			driver = Capabilities();
 			
 		}
-		//System.out.println("return " + base);
+		
 		return driver;
 	}
 	
