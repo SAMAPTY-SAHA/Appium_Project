@@ -23,7 +23,7 @@ public class Base {
 	{
 		if (base==null) {
 			
-			//System.out.println("inside if " + base);
+			
 			base= new Base();
 			driver = Capabilities();
 			
