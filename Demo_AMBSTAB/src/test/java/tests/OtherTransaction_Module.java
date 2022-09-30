@@ -22,6 +22,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class OtherTransaction_Module {
+	
 	@BeforeMethod
 	public void Login() throws MalformedURLException, InterruptedException {
 		
@@ -184,6 +185,23 @@ public class OtherTransaction_Module {
     			//continue;
          }
     				
+	}
+	
+	@AfterMethod
+	public void LogOut() throws MalformedURLException, InterruptedException {
+		
+		AndroidDriver<AndroidElement>  driver = Base.GetInstance();
+	
+	    
+		Thread.sleep(2000);
+        driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"More options\"]")).click(); //click more options(three dot)
+        
+	    driver.findElementByAndroidUIAutomator("text(\"Logout\")").click();
+	    Thread.sleep(2000);
+	    
+	    driver.findElementByAndroidUIAutomator("text(\"YES\")").click();
+	    Thread.sleep(2000);
+	    	
 	}
 	
 	
