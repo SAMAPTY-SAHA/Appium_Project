@@ -22,6 +22,34 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class OtherTransaction_Module {
+	@BeforeMethod
+	public void Login() throws MalformedURLException, InterruptedException {
+		
+		AndroidDriver<AndroidElement>  driver = Base.GetInstance();
+		
+		Thread.sleep(3000);
+		driver.findElementByAndroidUIAutomator("text(\"User Login\")").sendKeys("admin");
+	    Thread.sleep(2000);
+	   
+	   
+	    driver.findElementByAndroidUIAutomator("text(\"Password\")").sendKeys("Test@123");
+	    Thread.sleep(2000);
+	    
+	    
+	    driver.findElementByAndroidUIAutomator("text(\"Online Mode\")").click();
+	    Thread.sleep(2000);
+	    
+	    driver.findElementByAndroidUIAutomator("text(\"Login\")").click(); 
+	    Thread.sleep(2000);
+	    
+	  
+		//driver.navigate().back();
+		
+		
+		//driver.findElement(By.id("android:id/button1")).click();
+		//Thread.sleep(2000);
+		
+	}
 	
 	
 	@Test
