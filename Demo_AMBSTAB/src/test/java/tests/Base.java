@@ -48,30 +48,17 @@ public class Base {
 	DesiredCapabilities cap = new DesiredCapabilities();
 	
 	
-	///Emulator............//////////
+	/// Desired Capabilities for Emulator............//////////
 	//cap.setCapability(MobileCapabilityType.DEVICE_NAME,"PIXEL2XL");
 	
 	//cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel2API28");
 	//cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"1000");
 	
-	/////////////try to connect with mobile device 
+	/*connect with mobile device*/
 	
 	cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"ANDROID");
 	cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"11");
-	//cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Galaxy Tab A7 Lite");
-	//cap.setCapability(MobileCapabilityType.UDID,"R8KR50021HL");
-	//cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"1000");
-	
-	
-	/*cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"ANDROID");
-	cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10 QKQ1.200114.002");
-	cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Redmi Note 8");
-	cap.setCapability(MobileCapabilityType.UDID,"16a38ed0");
-	cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"1000");*/
-	
-	
-	///........................................
-	
+		
 	
 	cap.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 	
